@@ -85,7 +85,7 @@ if master_pwd is None or not verify_master_password(master_pwd, kept_master_pass
 key = load_key() + bytes(master_pwd, 'utf-8')
 
 while True:
-    mode = input("Add new password or  View existing password [view, add]: ")
+    mode = input("Add new password or  View existing password [view, add, quit]: ")
 
     if mode.lower() not in ["view", "add"]:
         print("Invalid mode. Please enter 'view' or 'add'.")
@@ -95,3 +95,5 @@ while True:
         view()
     elif mode.lower() == "add":
         add()
+    elif mode.lower() == "quit":
+        break

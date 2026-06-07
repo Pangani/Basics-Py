@@ -54,7 +54,9 @@ for SHOPNAME in [freelancers, antiques, pet_shop]:
 if not cart:
     print("\nYou didn't buy anything today. Better luck next time!")
 else:
-    print(f'\nYou Purchased {list(cart.keys())} Today it is all free. Have a nice day of mayhem!')
+    print(f'\nYou Purchased {len(cart)} Items Today and they are: ')
+    for item in cart:
+        print(f' - {item}')
     print(f'You used {calculate_total_cost(cart)} gold pieces today, you have {1000 - calculate_total_cost(cart)} gold pieces left in your purse.')
 
     print(f"\n(After Buying): Inventory in all stores: ")
